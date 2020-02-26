@@ -77,10 +77,6 @@ fun <T> compose(fns: List<(T) -> T>): (T) -> T = {
 fun <T1, T2, R> ((T1) -> T2).andThen(f: (T2) -> R): (T1) -> R = { f(this(it)) }
 
 
-fun <T1, T2, R> ((T1, T2) -> R).curried(): (T1) -> (T2) -> R = { t1: T1 ->
-    { t2: T2 -> this(t1, t2) }
-}
-
 fun main() {
 
 
